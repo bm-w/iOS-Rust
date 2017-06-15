@@ -1,0 +1,8 @@
+[package]
+name = "rust"
+version = "0.0.0"
+authors = ["Bastiaan Marinus van de Weerd <bastiaan@bm-w.eu>"]
+
+[lib]
+path = "rust/lib.rs"
+crate-type = ["staticlib"]

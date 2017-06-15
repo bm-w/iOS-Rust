@@ -1,0 +1,5 @@
+module LibRust [extern_c] {
+	header "rust.h"
+	link "rust"
+	export *
+}
