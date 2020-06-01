@@ -7,14 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B65EBF3E1EF3134E002C88F0 /* librust.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B65EBF3D1EF3134E002C88F0 /* librust.a */; };
+		B6152C3724842D22005208F0 /* rust.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B65EBF3F1EF31530002C88F0 /* rust.h */; };
 		B65EBF441EF33024002C88F0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65EBF431EF33024002C88F0 /* Security.framework */; };
 		B68453741EF30D6F00A564DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68453731EF30D6F00A564DE /* main.swift */; };
 		B684537B1EF30D6F00A564DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B684537A1EF30D6F00A564DE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B6152C3824842D3C005208F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B68453681EF30D6F00A564DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6152C2D24842CDC005208F0;
+			remoteInfo = LibRust;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6152C2C24842CDC005208F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B6152C3724842D22005208F0 /* rust.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		B65EBF3D1EF3134E002C88F0 /* librust.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librust.a; sourceTree = "<group>"; };
+		B6152C2E24842CDC005208F0 /* librust.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = librust.a; path = libLibRust.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65EBF3F1EF31530002C88F0 /* rust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rust.h; sourceTree = "<group>"; };
 		B65EBF431EF33024002C88F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B65EBF491EF333D8002C88F0 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
@@ -30,7 +53,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65EBF441EF33024002C88F0 /* Security.framework in Frameworks */,
-				B65EBF3E1EF3134E002C88F0 /* librust.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				B65EBF3F1EF31530002C88F0 /* rust.h */,
-				B65EBF3D1EF3134E002C88F0 /* librust.a */,
 				B65EBF491EF333D8002C88F0 /* module.map */,
 			);
 			path = Library;
@@ -69,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B68453701EF30D6F00A564DE /* iOS+Rust.app */,
+				B6152C2E24842CDC005208F0 /* librust.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +108,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B6152C2D24842CDC005208F0 /* LibRust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6152C3424842CDC005208F0 /* Build configuration list for PBXNativeTarget "LibRust" */;
+			buildPhases = (
+				B6152C3A24842D63005208F0 /* Compile using Cargo */,
+				B6152C2C24842CDC005208F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibRust;
+			productName = LibRust;
+			productReference = B6152C2E24842CDC005208F0 /* librust.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		B684536F1EF30D6F00A564DE /* iOS+Rust */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B68453821EF30D6F00A564DE /* Build configuration list for PBXNativeTarget "iOS+Rust" */;
@@ -97,6 +135,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B6152C3924842D3C005208F0 /* PBXTargetDependency */,
 			);
 			name = "iOS+Rust";
 			productName = "iOS+Rust";
@@ -113,6 +152,10 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Bastiaan Marinus van de Weerd";
 				TargetAttributes = {
+					B6152C2D24842CDC005208F0 = {
+						CreatedOnToolsVersion = 11.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					B684536F1EF30D6F00A564DE = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6HM28W7UE3;
@@ -134,6 +177,7 @@
 			projectRoot = "";
 			targets = (
 				B684536F1EF30D6F00A564DE /* iOS+Rust */,
+				B6152C2D24842CDC005208F0 /* LibRust */,
 			);
 		};
 /* End PBXProject section */
@@ -149,6 +193,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B6152C3A24842D63005208F0 /* Compile using Cargo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile using Cargo";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "CARGO_BIN_DIR=\"$HOME/.cargo/bin\"\nRUSTUP_EXEC=\"$CARGO_BIN_DIR/rustup\"\nCARGO_EXEC=\"$CARGO_BIN_DIR/cargo\"\nif [ ! -f \"$RUSTUP_EXEC\" ] || [ ! -f \"$CARGO_EXEC\" ]; then\n\techo \"Rustup / Cargo not installed\"'!'\"? (See https://rustup.rs)\" >&2\n\texit 1\nfi\n\nif [[ $CONFIGURATION == \"Release\" ]]; then\n\t# TODO: Use 'release' profile\n\techo \"Release configuration not yet supperted\"'!' >&2\n\texit 1\nfi\n\ndeclare -a CARGO_TARGETS=()\nfunction add_cargo_target {\n\t\"$RUSTUP_EXEC\" +stable target list | grep \"$1 (installed)\" > /dev/null\n\tif [ $? -ne 0 ]; then\n\t\techo \"Cargo target '$1' not installed\"'!'\"?\" >&2\n\t\texit 1\n\tfi\n\tCARGO_TARGETS+=($1)\n}\nfor ARCH in $(echo \"$ARCHS\"); do\n\tcase \"$ARCH\" in\n\t\t\"arm64\")\n\t\t\tadd_cargo_target \"aarch64-apple-ios\"\n\t\t\t;;\n\t\t\"x86_64\")\n\t\t\tadd_cargo_target \"x86_64-apple-ios\"\n\t\t\t;;\n\t\t*)\n\t\t\techo \"Unknown target '$ARCH'\"'!' >&2\n\t\t\texit 1\n\tesac\ndone\n\ndeclare -a CARGO_PRODUCTS=()\nfor CARGO_TARGET in ${CARGO_TARGETS[@]}; do\n\t\"$CARGO_EXEC\" build \\\n\t\t--manifest-path=\"$PROJECT_DIR/Cargo.toml\" \\\n\t\t--target-dir=\"$TARGET_TEMP_DIR\" \\\n\t\t--target=\"$CARGO_TARGET\"\n\tCARGO_PRODUCTS+=(\"$TARGET_TEMP_DIR/$CARGO_TARGET/debug/librust.a\")\ndone\n\nlipo -create \"${CARGO_PRODUCTS[@]}\" -output \"$TARGET_BUILD_DIR/librust.a\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B684536C1EF30D6F00A564DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -160,7 +225,50 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B6152C3924842D3C005208F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6152C2D24842CDC005208F0 /* LibRust */;
+			targetProxy = B6152C3824842D3C005208F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B6152C3524842CDC005208F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6152C3624842CDC005208F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B68453801EF30D6F00A564DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -283,10 +391,6 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Library",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.bm-w.iOS-Rust";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Library";
@@ -303,10 +407,6 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Library",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.bm-w.iOS-Rust";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Library";
@@ -317,6 +417,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B6152C3424842CDC005208F0 /* Build configuration list for PBXNativeTarget "LibRust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6152C3524842CDC005208F0 /* Debug */,
+				B6152C3624842CDC005208F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B684536B1EF30D6F00A564DE /* Build configuration list for PBXProject "iOS+Rust" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
